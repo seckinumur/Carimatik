@@ -12,6 +12,27 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>tr-TR</TargetCulture>
+    <ProductName>Carimatik</ProductName>
+    <PublisherName>seçkin umur</PublisherName>
+    <SuiteName>CarimatikYukle</SuiteName>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>0.6.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,8 +56,22 @@
   <PropertyGroup>
     <ApplicationIcon>SM.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8C85315D35BE5C06B5E6CEF48F5B0625682931AF</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MainUIForm_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -111,6 +146,7 @@
     <EmbeddedResource Include="UrunEkleForm.resx">
       <DependentUpon>UrunEkleForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="MainUIForm_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -132,8 +168,57 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\CMDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\CMDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CMDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Dll\DevExpress.Data.v17.1.dll" />
+    <Content Include="Dll\DevExpress.Data.v17.1.xml" />
+    <Content Include="Dll\DevExpress.Office.v17.1.Core.dll" />
+    <Content Include="Dll\DevExpress.Office.v17.1.Core.xml" />
+    <Content Include="Dll\DevExpress.Pdf.v17.1.Core.dll" />
+    <Content Include="Dll\DevExpress.Pdf.v17.1.Core.xml" />
+    <Content Include="Dll\DevExpress.Printing.v17.1.Core.dll" />
+    <Content Include="Dll\DevExpress.Printing.v17.1.Core.xml" />
+    <Content Include="Dll\DevExpress.RichEdit.v17.1.Core.dll" />
+    <Content Include="Dll\DevExpress.RichEdit.v17.1.Core.xml" />
+    <Content Include="Dll\DevExpress.Sparkline.v17.1.Core.dll" />
+    <Content Include="Dll\DevExpress.Sparkline.v17.1.Core.xml" />
+    <Content Include="Dll\DevExpress.Utils.v17.1.dll" />
+    <Content Include="Dll\DevExpress.Utils.v17.1.xml" />
+    <Content Include="Dll\DevExpress.XtraBars.v17.1.dll" />
+    <Content Include="Dll\DevExpress.XtraBars.v17.1.xml" />
+    <Content Include="Dll\DevExpress.XtraEditors.v17.1.dll" />
+    <Content Include="Dll\DevExpress.XtraEditors.v17.1.xml" />
+    <Content Include="Dll\DevExpress.XtraGrid.v17.1.dll" />
+    <Content Include="Dll\DevExpress.XtraGrid.v17.1.xml" />
+    <Content Include="Dll\DevExpress.XtraLayout.v17.1.dll" />
+    <Content Include="Dll\DevExpress.XtraLayout.v17.1.xml" />
+    <Content Include="Dll\DevExpress.XtraPrinting.v17.1.dll" />
+    <Content Include="Dll\DevExpress.XtraPrinting.v17.1.xml" />
+    <Content Include="Dll\DevExpress.XtraTreeList.v17.1.dll" />
+    <Content Include="Dll\DevExpress.XtraTreeList.v17.1.xml" />
     <Content Include="Img\SM.ico" />
+    <Content Include="Kullanım.txt" />
+    <Content Include="Lisans.txt" />
+    <Content Include="SetupDosyasi.iss" />
     <Content Include="SM.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 ve x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

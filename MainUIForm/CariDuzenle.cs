@@ -19,11 +19,6 @@ namespace MainUIForm
             InitializeComponent();
         }
         public Form1 eris = (Form1)Application.OpenForms["Form1"];
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            eris.Enabled = true;
-        }
 
         private void TAlacak_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -33,12 +28,13 @@ namespace MainUIForm
         private void button2_Click(object sender, EventArgs e)
         {
             CariVM Veri = new CariVM();
-            if (checkBox2.Checked == true)
+            if (MutabikKal.Checked == true)
             {
                 Veri.ID = int.Parse(Mid.Text);
                 Veri.MüşteriAdı = MAdi.Text.ToUpper().Trim();
                 Veri.Odenen = 0;
                 Veri.Toplam = 0;
+                //Veri.KalanCari = 0;
                 Veri.Mutabık = "Mutabık Kalındı";
                 bool sonuc = MusteriRepo.CariDuzenle(Veri);
                 if (sonuc == true)
@@ -58,7 +54,8 @@ namespace MainUIForm
                 Veri.ID = int.Parse(Mid.Text);
                 Veri.MüşteriAdı = MAdi.Text.ToUpper().Trim();
                 Veri.Odenen = double.Parse(TOdenen.Text);
-                Veri.Toplam = double.Parse(TAlacak.Text);
+                Veri.Toplam = double.Parse(TCari.Text);
+                //Veri.KalanCari = double.Parse(Talacak.Text);
                 Veri.Mutabık = (MutabikKal.Checked == true) ? "Mutabık Kalındı" : "Mutabık Kalınmadı";
                 bool sonuc = MusteriRepo.CariDuzenle(Veri);
                 if (sonuc == true)
@@ -99,6 +96,12 @@ namespace MainUIForm
                     MessageBox.Show("Müşteri İle Mutabık olmadığınız İçin Müşteri Silinemez!", "Uyarı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void CariDuzenle_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            eris.Enabled = true;
+            eris.Form1_Load(sender, e);
         }
     }
 }

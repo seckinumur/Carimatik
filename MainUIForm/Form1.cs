@@ -235,8 +235,9 @@ namespace MainUIForm
                 var bul = MusteriRepo.CariBul(int.Parse(ID));
                 CariDuzenle ac = new CariDuzenle();
                 ac.MAdi.Text = bul.MüşteriAdı;
-                ac.TAlacak.Text = bul.Toplam.ToString();
+                ac.TCari.Text = bul.Toplam.ToString();
                 ac.TOdenen.Text = bul.Odenen.ToString();
+                ac.Talacak.Text = bul.KalanCari.ToString();
                 ac.MutabikKal.Checked = (bul.Mutabık == "Mutabık Kalındı") ? true : false;
                 ac.Mid.Text = bul.ID.ToString();
                 ac.Show();

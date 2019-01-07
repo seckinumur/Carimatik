@@ -27,6 +27,7 @@ namespace Entity.Context
     //        db.SaveChanges();
     //        db.Siparis.Add(new Siparis { MusterilerID = 1,Toplam=0,ToplamOdenen=0,Tamamlandi=true, Tarih = DateTime.Now.ToShortDateString() });
     //        db.SaveChanges();
+    //Data Source = (localdb)\MSSQLLocalDB;Initial Catalog = Entity.Context.CMDB; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
     //    }
     //}
 }

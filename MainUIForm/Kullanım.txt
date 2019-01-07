@@ -1,0 +1,7 @@
+﻿©2019 Seçkin Umur Carimatik Kurulum Dosyası
+
+Uygulama Microsoft Veritabanı Çözümü 
+
+SQL Server 2016 Express LocalDB Kullanır.
+
+Uygulama Yüklendikten Sonra Sisteme Kurulmalıdır.

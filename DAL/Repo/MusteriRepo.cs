@@ -49,7 +49,7 @@ namespace DAL.Repo
                     bul.Isim = Veri.MüşteriAdı;
                     bul.OdenenCari = Veri.Odenen;
                     bul.ToplamCari = Veri.Toplam;
-                    bul.KalanCari = Veri.KalanCari;
+                    bul.KalanCari =(Veri.Toplam-Veri.Odenen);
                     bul.HesapKapandimi = (Veri.Mutabık== "Mutabık Kalındı")?true:false;
                     db.SaveChanges();
                     return true;
